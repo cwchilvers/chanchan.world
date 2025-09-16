@@ -1,0 +1,23 @@
+body {
+	font-family: serif;
+	font-weight: 300;
+	display: flex;
+	min-height: 100vh;
+	min-width: 100vw;
+	background-color: #000;
+	color: var(--brand);
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	flex-direction: column;
+	gap: 40px;
+	padding: 40px;
+}
+
+hr {
+	border: none;
+	height: 1px;
+	background-color: var(--brand);
+	margin: 10px 0;
+}
+

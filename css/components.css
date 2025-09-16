@@ -1,0 +1,67 @@
+/* Header */
+.header {
+    border: 1px solid var(--brand);
+    padding: 20px;
+    display: flex; 
+    align-items: center; 
+    gap: 24px;
+}
+
+.header > img:first-of-type { 
+	align-self: flex-start; 
+	margin-top: 20px;
+}
+
+.header > span {
+  margin-left: -20px;
+  align-self: flex-end;
+}
+
+.scramble .glyph {
+  display: inline-block;
+  width: 1.2ch;
+  text-align: center;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.scramble .glyph:nth-child(3) {
+  position: relative;
+  left: 2px;
+}
+
+/* Contact */
+.links {
+	display: flex;
+	gap: 20px;
+	align-items: center;
+}
+
+.links img {
+	width: 25px;
+}
+
+
+@media (max-width: 640px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* 2nd image centered */
+  .header > img:nth-of-type(1) {
+    padding-right: 40px;
+	margin-top: 0;
+	margin-bottom: -10px;
+  }
+
+  .header > img:nth-of-type(2) {
+    align-self: center;
+  }
+
+  /* last text stays right edge */
+  .header > span {
+    align-self: flex-end;
+	margin-top: -20px
+  }
+}

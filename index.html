@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>cнan.cнan.world</title>
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/variables.css">
+	<link rel="stylesheet" href="css/fonts.css">
+	<link rel="stylesheet" href="css/globals.css">
+	<link rel="stylesheet" href="css/layout.css">
+	<link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+	<div class="header">
+        <img src="images/chanchan.png" style="width: 200px">
+        <img src="images/world.gif" style="width: 150px">
+        <span class="scramble">.world</span>
+	</div>
+
+    <span>i love the internet!</span>
+
+	<div class="links">
+		<a href="https://open.spotify.com/artist/5GKtLjTyeBQvGnoCNA7tXn?si=p2C9TeRrSAmUoFsAe1avWA" title="spotify">
+			<img src="images/spotify.svg" alt="spotify">
+		</a>
+
+		<a href="https://chanchanworld.bandcamp.com/" title="bandcamp">
+			<img src="images/bandcamp.svg" alt="bandcamp">
+		</a>
+
+        <a href="https://www.instagram.com/chan.chan.music/" title="instagram">
+			<img src="images/instagram.svg" alt="instagram">
+		</a>
+
+        <a href="https://www.youtube.com/channel/UCRpkd-o_4PgAPTqiitr0fBg" title="youtube">
+			<img src="images/youtube.svg" alt="instagram">
+		</a>
+	</div>
+
+	<div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+
+<script>
+(() => {
+  // Letters to mutate and their lookalike pools
+  const pool = {
+    o: ['o','0','O','°','ø','ö','õ','ō','○','●'],
+    l: ['l','1','|','¦','ł']
+  };
+
+  const el = document.querySelector('.scramble');
+  if (!el) return;
+
+  // Split into fixed-width spans
+  const text = el.textContent;
+  el.textContent = '';
+  [...text].forEach(ch => {
+    const s = document.createElement('span');
+    s.className = 'glyph';
+    s.dataset.base = ch;
+    s.textContent = ch;
+    el.appendChild(s);
+  });
+
+  const glyphs = [...el.querySelectorAll('.glyph')];
+
+  // Helper: pick a new char that's not the current one
+  const pick = (arr, current) => {
+    if (!arr || arr.length === 0) return current;
+    let next = current;
+    while (arr.length > 1 && next === current) {
+      next = arr[(Math.random() * arr.length) | 0];
+    }
+    return next;
+  };
+
+  // Schedule organic, per-letter updates
+  const schedule = node => {
+    const base = node.dataset.base.toLowerCase();
+    const choices = pool[base];
+    if (!choices) return; 
+
+    const jitter = 100; // 0.9–2.4s
+    setTimeout(() => {
+      node.textContent = pick(choices, node.textContent);
+      schedule(node);
+    }, jitter);
+  };
+
+  glyphs.forEach(schedule);
+
+  // Optional: “glitch boost” on hover
+  el.addEventListener('mouseenter', () => {
+    glyphs.forEach(g => {
+      const base = g.dataset.base.toLowerCase();
+      if (!pool[base]) return;
+      // quick burst
+      for (let i = 0; i < 6; i++) {
+        setTimeout(() => g.textContent = pick(pool[base], g.textContent), i * 40);
+      }
+    });
+  });
+})();
+</script>
+
+
+</html>
