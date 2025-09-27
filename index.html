@@ -136,7 +136,8 @@
 	<link rel="stylesheet" href="css/layout.css">
 	<link rel="stylesheet" href="css/components.css">
 
-  <script src="scripts/scramble.js" defer></script>
+	<script src="scripts/scramble.js" defer></script>
+	<script src="scripts/accordion.js" defer></script>
 </head>
 <body>
 	<div class="header">
@@ -161,10 +162,27 @@
 		</a>
 
         <a href="https://www.youtube.com/channel/UCRpkd-o_4PgAPTqiitr0fBg" title="youtube">
-			<img src="images/youtube.svg" alt="instagram">
+			<img src="images/youtube.svg" alt="YouTube">
+		</a>
+
+		<a href="https://music.apple.com/us/artist/c%D0%BDan-c%D0%BDan/1805808533" title="apple music">
+			<img src="images/apple.svg" alt="apple music">
 		</a>
 	</div>
 
-	<div id="toast" class="toast" role="status" aria-live="polite"></div>
+	<div class="more-links accordion">
+	<button id="moreLinksBtn"
+			class="accordion-trigger"
+			aria-expanded="false"
+			aria-controls="more-links">
+		more links ▶▶
+	</button>
+
+	<ul id="more-links" class="accordion-panel" hidden>
+		<li><a href="https://soundcloud.com/chan-chan-world"><img src="images/soundcloud.svg">soundcloud</a></li>
+		<li><a href="https://chanchanworld.newgrounds.com/"><img src="images/newgrounds.svg">newgrounds</a></li>
+		<li><a href="https://www.amazon.com/music/player/artists/B0F38Q8T1S/c%D0%BDan-c%D0%BDan"><img src="images/amazon.svg">amazon music</a></li>
+	</ul>
+	</div>
 </body>
 </html>
