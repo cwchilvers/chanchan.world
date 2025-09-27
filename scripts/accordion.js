@@ -1,26 +1,22 @@
 (function () {
-  const btn   = document.getElementById('moreLinksBtn');
+  const btn = document.getElementById('moreLinksBtn');
   const panel = document.getElementById('more-links');
   if (!btn || !panel) return;
 
   function openPanel() {
     panel.hidden = false;
-    const start = panel.offsetHeight;
-    panel.style.height = 'auto';
-    const end = panel.offsetHeight;
-    panel.style.height = start + 'px';
-    requestAnimationFrame(() => {
-      panel.style.height = end + 'px';
-    });
+    panel.style.height = '0px';
+    const end = panel.scrollHeight;
+    panel.offsetHeight;
+    panel.style.height = end + 'px';
     btn.setAttribute('aria-expanded', 'true');
   }
 
   function closePanel() {
-    const start = panel.offsetHeight;
+    const start = panel.scrollHeight; 
     panel.style.height = start + 'px';
-    requestAnimationFrame(() => {
-      panel.style.height = '0px';
-    });
+    panel.offsetHeight;
+    panel.style.height = '0px';
     btn.setAttribute('aria-expanded', 'false');
   }
 

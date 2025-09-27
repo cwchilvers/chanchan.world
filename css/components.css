@@ -57,7 +57,7 @@
   transition: height 200ms ease;
   margin: 8px 0 0 0;
   text-align: left;
-  
+  display: grid;
 }
 
 .accordion-panel > li {
