@@ -7,6 +7,10 @@
 	<title>cнan.cнan | Official Website</title>
 	<meta name="description" content="Official website for chan.chan (aka cнan.cнan) — Songwriter, producer, and audio engineer. Listen to releases, find links to Spotify, Apple Music, YouTube, Bandcamp, and more."/>
 	<meta name="robots" content="index,follow" />
+	<meta name="theme-color" content="#000000">
+
+	<link rel="icon" href="images/favicon.ico" sizes="any">
+	<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 
 	<script type="application/ld+json">
 	{
@@ -63,7 +67,14 @@
 					"chan chan music",
 					"chanchan music"
 				],
-				"url": "https://chanchan.world"
+				"url": "https://chanchan.world",
+				"publisher": {
+					"@type": "Organization",
+					"logo": {
+						"@type": "ImageObject",
+						"url": "https://chanchan.world/favicon.ico"
+					}
+				}
 			},
 			{
 				"@type": "MusicRecording",
@@ -84,8 +95,8 @@
 					"Pop",
 					"Electronic",
 					"Cinematic Hyperpop",
-					"Vocaloid",
-				]
+					"Vocaloid"
+				],
 				"byArtist": {
 					"@type": "Person",
 					"name": "cнan.cнan"
@@ -114,7 +125,7 @@
 					"Rock",
 					"Pop Rock",
 					"Synth V"
-				]
+				],
 				"byArtist": {
 					"@type": "Person",
 					"name": "cнan.cнan"
@@ -127,8 +138,6 @@
 		]
 	}
 	</script>
-
-	<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/variables.css">
@@ -171,18 +180,18 @@
 	</div>
 
 	<div class="more-links accordion">
-	<button id="moreLinksBtn"
-			class="accordion-trigger"
-			aria-expanded="false"
-			aria-controls="more-links">
-		more links ▶▶
-	</button>
+		<button id="moreLinksBtn"
+				class="accordion-trigger"
+				aria-expanded="false"
+				aria-controls="more-links">
+			more links ▶▶
+		</button>
 
-	<ul id="more-links" class="accordion-panel" hidden>
-		<li><a href="https://soundcloud.com/chan-chan-world?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"><img src="images/soundcloud.svg">soundcloud</a></li>
-		<li><a href="https://chanchanworld.newgrounds.com/"><img src="images/newgrounds.svg">newgrounds</a></li>
-		<li><a href="https://www.amazon.com/music/player/artists/B0F38Q8T1S/c%D0%BDan-c%D0%BDan"><img src="images/amazon.svg">amazon music</a></li>
-	</ul>
+		<ul id="more-links" class="accordion-panel" hidden>
+			<li><a href="https://soundcloud.com/chan-chan-world?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"><img src="images/soundcloud.svg">soundcloud</a></li>
+			<li><a href="https://chanchanworld.newgrounds.com/"><img src="images/newgrounds.svg">newgrounds</a></li>
+			<li><a href="https://www.amazon.com/music/player/artists/B0F38Q8T1S/c%D0%BDan-c%D0%BDan"><img src="images/amazon.svg">amazon music</a></li>
+		</ul>
 	</div>
 </body>
 </html>
