@@ -112,6 +112,31 @@
   flex-shrink: 0;
 }
 
+.listen ul li {
+  display: block;
+  transform: translateX(0);
+  animation: waveCycle 6s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.15s);
+  will-change: transform;
+}
+
+.listen ul li:nth-child(1) { --i: 0; }
+.listen ul li:nth-child(2) { --i: 1; }
+.listen ul li:nth-child(3) { --i: 2; }
+.listen ul li:nth-child(4) { --i: 3; }
+
+@keyframes waveCycle {
+  0%   { transform: translateX(0); }
+  5%   { transform: translateX(6px); }
+  10%  { transform: translateX(0); }
+  100% { transform: translateX(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .listen ul li { animation: none; }
+}
+
+
 /* Stars */
 #stars {
   position: fixed;
