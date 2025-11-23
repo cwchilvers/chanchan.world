@@ -69,6 +69,20 @@
   margin-right: 10px
 }
 
+/* Affiliates */
+.affiliate-title {
+  text-decoration: underline;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 12px
+}
+
+.affiliate-buttons img {
+  width: 88px;
+  height: 31px;
+  border: solid 1px var(--brand)
+}
+
 /* Listen */
 .listen {
     border: 1px solid var(--brand);
