@@ -30,7 +30,23 @@
   left: 2px;
 }
 
-/* Contact */
+/* Email */
+.email {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 12px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  text-decoration: underline
+}
+
+.email img {
+  width: 20px !important;
+}
+
+/* Links */
 .links {
 	display: flex;
 	gap: 20px;
