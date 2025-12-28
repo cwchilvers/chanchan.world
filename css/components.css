@@ -223,6 +223,7 @@
 
 .email-form textarea {
   height: 150px;
+  resize: none;
 }
 
 .email-form button {
@@ -240,6 +241,10 @@ input:focus, textarea:focus {
 }
 
 input, textarea, .email-form button {
-  /* hard shadow, no blurring solid black */
   box-shadow: 5px 5px 0 0px black;
+}
+
+/* Emali Sent */
+.email-sent p {
+  margin-top: 20px;
 }
