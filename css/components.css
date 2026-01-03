@@ -366,7 +366,8 @@ nav a {
 
 body.lyrics .content {
   align-items: flex-start;   
-  max-width: 520px;     
+  max-width: 520px;
+  padding-bottom: 30px; 
 }
 
 /* Title */
