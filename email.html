@@ -3,39 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>cнan.cнan | Official Website</title>
+
+    <meta name="description" content="Official website for chan.chan (aka cнan.cнan) — Songwriter, producer, and audio engineer. Listen to releases, find links to Spotify, Apple Music, YouTube, Bandcamp, and more." />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#000000">
+
+    <link rel="icon" href="images/favicon.ico" sizes="any">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/globals.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/components.css">
-
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 
 <body>
 
-<form class="email-form"
-      action="https://script.google.com/macros/s/AKfycbxfCarawPpFE95lq3iPZ689R_ws2QhjkfGMwu9BcBzhjSGXXwyDJ_LXijECXqQrkpU/exec"
-      method="POST">
+    <form class="email-form"
+          action="https://api.web3forms.com/submit"
+          method="POST">
 
-    <label>Name</label>
-    <input type="text" name="name" required>
+        <input type="hidden" name="access_key" value="e7e11031-d695-41b8-910f-88a38c58d482">
 
-    <label>Email</label>
-    <input type="email" name="email" required>
+        <input type="checkbox" name="botcheck" style="display:none">
 
-    <label>Message</label>
-    <textarea name="message" required></textarea>
+        <input type="hidden" name="subject" value="chanchan.world | New Message">
+        <input type="hidden" name="redirect" value="https://chanchan.world/email-sent.html">
 
-    <div class="cf-turnstile" data-sitekey="0x4AAAAAACZyimSmRZBEXyd7"></div>
+        <label for="name">Name</label>
+        <input type="text" name="name" required>
 
-    <button type="submit">Send</button>
+        <label for="email">Email</label>
+        <input type="email" name="email" required>
 
-</form>
+        <label for="message">Message</label>
+        <textarea name="message" required></textarea>
 
-<a class="home" href="../index.html">← home</a>
+        <button type="submit">Send</button>
+
+    </form>
+
+    <a class="home" href="../index.html">← home</a>
 
 </body>
 </html>
