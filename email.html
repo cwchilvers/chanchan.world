@@ -1,45 +1,81 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>cнan.cнan | Official Website</title>
 
-	<title>cнan.cнan | Official Website</title>
-	<meta name="description" content="Official website for chan.chan (aka cнan.cнan) — Songwriter, producer, and audio engineer. Listen to releases, find links to Spotify, Apple Music, YouTube, Bandcamp, and more."/>
-	<meta name="robots" content="index,follow" />
-	<meta name="theme-color" content="#000000">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/globals.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
 
-	<link rel="icon" href="images/favicon.ico" sizes="any">
-	<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
-
-	<link rel="stylesheet" href="css/reset.css">
-	<link rel="stylesheet" href="css/variables.css">
-	<link rel="stylesheet" href="css/globals.css">
-	<link rel="stylesheet" href="css/layout.css">
-	<link rel="stylesheet" href="css/components.css">
-
-	<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
-    <form class="email-form" action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="e7e11031-d695-41b8-910f-88a38c58d482">
-        <input type="checkbox" name="botcheck" style="display:none">
-        <input type="hidden" name="subject" value="chanchan.world | New Message">
-        <input type="hidden" name="redirect" value="https://chanchan.world/email-sent.html">
-        
-        <label for="name">Name</label>
+    <form class="email-form" id="contactForm">
+        <label>Name</label>
         <input type="text" name="name" required>
 
-        <label for="email">Email</label>
+        <label>Email</label>
         <input type="email" name="email" required>
 
-        <label for="message">Message</label>
+        <label>Message</label>
         <textarea name="message" required></textarea>
 
-		<div class="cf-turnstile" data-sitekey="0x4AAAAAACZyimSmRZBEXyd7"></div>
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAACZyimSmRZBEXyd7"></div>
+
         <button type="submit">Send</button>
+        <p id="status" style="margin-top:12px;"></p>
     </form>
 
     <a class="home" href="../index.html">← home</a>
+
+    <script>
+        const ENDPOINT = "https://script.google.com/macros/s/AKfycbzInXYN5MUBY4jP6NzLPmApKrPlRxu1oDZBJnU5GQ8dgi1db-L1V_QnYwCZEGTIR-o/exec";
+
+        document.getElementById('contactForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const statusEl = document.getElementById('status');
+            statusEl.textContent = "Sending...";
+
+            const form = e.currentTarget;
+            const formData = new FormData(form);
+
+            const token = formData.get('cf-turnstile-response');
+            if (!token) {
+                statusEl.textContent = "Please complete the bot check.";
+                return;
+            }
+
+            const payload = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                message: formData.get('message'),
+                turnstileToken: token
+            };
+
+            try {
+                const res = await fetch(ENDPOINT, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                    body: JSON.stringify(payload)
+                });
+
+                const json = await res.json().catch(() => ({}));
+
+                if (!res.ok || !json.ok) {
+                    statusEl.textContent = "Failed to send. Try again.";
+                    return;
+                }
+
+                window.location.href = "https://chanchan.world/email-sent.html";
+            } catch (err) {
+                statusEl.textContent = "Failed to send. Try again.";
+            }
+        });
+    </script>
 </body>
 </html>
