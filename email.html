@@ -17,6 +17,8 @@
 	<link rel="stylesheet" href="css/globals.css">
 	<link rel="stylesheet" href="css/layout.css">
 	<link rel="stylesheet" href="css/components.css">
+
+	<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
     <form class="email-form" action="https://api.web3forms.com/submit" method="POST">
@@ -34,6 +36,7 @@
         <label for="message">Message</label>
         <textarea name="message" required></textarea>
 
+		<div class="cf-turnstile" data-sitekey="0x4AAAAAACZyimSmRZBEXyd7"></div>
         <button type="submit">Send</button>
     </form>
 
