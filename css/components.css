@@ -403,3 +403,41 @@ body.lyrics .verse p {
 body.lyrics {
   overflow-x: hidden;
 }
+
+/* Lyrics Link */
+.music .content ul.song-list a.lyrics {
+    justify-self: end;
+    text-decoration: none;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 4px 10px;
+    border-radius: 999px;
+
+    background: #fff;
+    color: #000;
+
+    font-size: 10px;
+    line-height: 1;
+    text-transform: lowercase;
+
+    border: 1px solid #000;
+    box-shadow: 2px 2px 0 0px #000;
+}
+
+.music .content ul.song-list a.lyrics:hover {
+    text-decoration: none;
+    transform: translateY(-1px);
+}
+
+.music .content ul.song-list a.lyrics:active {
+    transform: translateY(0);
+    box-shadow: 1px 1px 0 0px #000;
+}
+
+.music .content ul.song-list a.lyrics:focus-visible {
+    outline: 4px solid var(--brand);
+    outline-offset: 2px;
+}
