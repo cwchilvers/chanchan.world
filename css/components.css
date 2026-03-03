@@ -441,3 +441,35 @@ body.lyrics {
     outline: 4px solid var(--brand);
     outline-offset: 2px;
 }
+
+.misc .content {
+  width: 300px
+}
+
+.misc .content {
+    align-items: flex-start;
+}
+
+.misc .content > h1 {
+    align-self: center;
+}
+
+.misc .content > ul {
+    width: 100%;
+    list-style: none; 
+}
+
+.misc .content p {
+    text-align: left;
+}
+
+.misc .collabs li p {
+    text-align: left;
+    align-self: flex-start;
+}
+
+.misc p {
+  font-size: 12px;
+  opacity: 70%;
+  padding-top:5px
+}
