@@ -404,6 +404,10 @@ body.lyrics {
   overflow-x: hidden;
 }
 
+.spoken p {
+    font-style: italic;
+}
+
 /* Lyrics Link */
 .music .content ul.song-list a.lyrics {
     justify-self: end;
