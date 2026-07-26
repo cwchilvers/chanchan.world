@@ -477,3 +477,9 @@ body.lyrics {
   opacity: 70%;
   padding-top:5px
 }
+
+.divider {
+  border: 1px solid white;
+  width: 100%;
+  opacity: 25%;
+}
