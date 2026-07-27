@@ -483,3 +483,8 @@ body.lyrics {
   width: 100%;
   opacity: 25%;
 }
+
+.mini-header {
+  font-size: 12px;
+  opacity: 50%;
+}
