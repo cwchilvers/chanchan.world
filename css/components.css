@@ -496,8 +496,8 @@ body.lyrics {
   left: 0;
   right: 0;
   text-align: center;
-  font-size: 11px;
-  color: #666;
+  font-size: 10px;
+  color: #4c4c4c;
   padding: 10px 0;
   background: black;
   z-index: 50;
